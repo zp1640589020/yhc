@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+		 *{margin:0px;padding:0px}
+			.herder{
+			 width: 100%;
+			 height: 100vh;
+			 background:url(img/bg.jpg)no-repeat center;
+			 background-size:100%;
+			}
+		 .yhc img{
+		 	width:50px;
+		 	height: 50px;
+		 	position: absolute;
+		 	left:0px;top:0px;
+		 	animation:gg 2s linear 0s infinite; 
+		 	opacity: 1;
+		 }
+		 .yhc{
+		 	width:100%;
+		 	height:60%;
+		 	position: relative;
+		 }
+		  .xin img{
+		 	width:30px;
+		 	height: 20px;
+		 	position: absolute;
+		 	left:0px;top:0px;
+		 	animation:gg 2s linear 0s infinite; 
+		 	opacity: 1;
+		 }
+		</style>
+	</head>
+	<body>
+	  <div class="herder">
+	  	<div class="yhc">
+	  		<img src="img/1.jpg">
+	  	</div>
+	  	<div class="xin">
+	  		<img src="img/snow.gif">
+	    </div>
+	</body>
+</html>
+<script src="js/jquery-1.11.1.js" ></script>
+<script>
+var dsq;
+	function tian(){
+		this.yhc=function(){
+		 for(var i=0;i<=50;i++){
+		 	dsq=setInterval(function(){
+		 	$('.yhc').append('<img src="img/1.jpg">')
+		 	var z =Math.floor(Math.random() *1200+10);
+			var x =Math.floor(Math.random() *250+50); 
+			var c =Math.floor(Math.random() *5+3);  
+			var v =Math.random() *0.9+0.1; 
+			$('.yhc img').eq(i).css({'left': + z + 'px','top': + x + 'px','animation':'gg ' +c+'s linear 0s infinite','opacity':+v})
+			$("#X>img").animate({"left": z, "top": x}, 2000);
+		  },1000)
+		 }
+		}
+		this.xin=function(){
+			for(var i=0;i<=50;i++){
+			dsq=setInterval(function(){
+		 	$('.xin').append('<img src="img/snow.gif">')
+		 	var z =Math.floor(Math.random() *1200+10);
+			var x =Math.floor(Math.random() *250+50); 
+			var c =Math.floor(Math.random() *5+3);  
+			var v =Math.random() *0.9+0.1; 
+			$('.xin img').eq(i).css({'left': + z + 'px','top': + x + 'px','animation':'gg ' +c+'s linear 0s infinite','opacity':+v})
+			$("#X>img").animate({"left": w, "top": h}, 2000);
+		   },1000)
+		 }
+		}
+	}
+	var kk=new tian()
+	kk.yhc()
+	kk.xin()
+</script>
