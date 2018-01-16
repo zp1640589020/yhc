@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+				<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			body {
+				height: 100vh;
+				background: url(img/bg.jpg) no-repeat;
+				background-size: 100% 100%;
+			}
+		
+			.yhce {
+				width: 45px;
+				height: 40px;
+				background: url(img/1.jpg);
+				background-size: 100% 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			.xing{
+				width: 45px;
+				height: 40px;
+				background: url(img/snow.gif);
+				background-size: 100% 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		</style>
+	</head>
+	<body>
+	</body>
+</html>
+<script src="js/jquery-1.11.1.js"></script>
+<script>
+	function tian(){
+		this.one=$('<div></div>')
+		this.one.addClass("yhce")
+		this.one.appendTo("body")  
+		this.xinwei=function(){
+			var x=Math.random()*($('body').width()-100)
+			var y=Math.random()*($('body').height()-100)
+			var aa=this
+			this.one.animate({left:x,top:y},1000,function(){
+				aa.xinwei()
+			})
+		}
+	}
+	setInterval(function() {
+	new tian().xinwei()
+}, 1000)
+	function kong(){
+		this.one=$('<div></div>')
+		this.one.addClass("xing")
+		this.one.appendTo("body")  
+		this.xinwei=function(){
+			var x=Math.random()*($('body').width()-100)
+			var y=$('body').height()-100
+			var aa=this
+			this.one.animate({left:x,top:y},1000,function(){
+				//aa.xinwei()
+			})
+		}
+	}
+	setInterval(function() {
+	new kong().xinwei()
+}, 300)	
+</script>

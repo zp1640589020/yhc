@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+		 .xiaoliao{
+		 	background:url(img/1.png);
+		 	position: absolute;
+		 	left:0;top:0;
+		 	width:200px;
+		 	height:200px;
+		 	background-size:cover;
+		 }
+		</style>
+	</head>
+	<body>
+
+	</body>
+</html>
+<script src="js/jquery-1.11.1.js" ></script>
+<script>
+	function Chuang(){
+		this.ele=$("<div></div>")
+		this.ele.addClass('xiaoliao')
+		this.ele.appendTo("body")
+	}
+	Chuang.prototype.aa=function(){
+		var whet=this
+		this.ele.mousedown(function(a){
+			var X=a.offsetX
+			var Y=a.offsetY
+			$('body').mousemove(function(a){
+				whet.ele.css({
+					left:a.clientX-X,
+					top:a.clientY-Y
+				})
+			})
+			$('body').mouseup(function(){
+				$('body').off('mouseup mousemove')
+			})
+			
+		})
+	}
+	new Chuang().aa()
+</script>
