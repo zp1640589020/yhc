@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+				
+		<style>
+			div {
+				width: 100px;
+				height: 100px;
+				background: red;
+				position: absolute;
+			}
+			
+			#box1 {
+				background: pink;
+				left: 0;
+			}
+			
+			#box2 {
+				background: red;
+				left: 200px;
+			}
+			
+			#box3 {
+				background: blue;
+				left: 400px;
+			}
+		</style>
+		
+	</head>
+	<body>
+	    <div id="box1"></div>
+		<div id="box2"></div>
+		<div id="box3"></div>
+	</body>
+</html>
+<script src="js/jquery-1.11.1.min.js" ></script>
+<script src="img/JSon/one.js" ></script>
+<script src="img/JSon/two.js"></script>
+<script src="img/JSon/three.js"></script>
+<script>
+	new one("#box1").kaishi()
+	new two("#box2").kaishi()
+	new three("#box3").kaishi()
+</script>
+ <!--1. call到底是起到继承还，传值还是起到别的作用
+ 2. 在我的three的JS文件第7行中 为什么还要在传值一次 ？ 难道前面传的值不包括这个移动的值么-->
